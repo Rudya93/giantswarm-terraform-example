@@ -33,3 +33,32 @@ curl -X POST -d @credentials.json https://${INSTALLATION_URI}/v4/auth-tokens/
 ```
 
 This token must then be provided to Terraform (as the `auth_token` variable).
+
+## Configuration
+
+Copy the vars file:
+
+```bash
+cp terraform.tfvars{.example,}
+```
+
+Then update `terraform.tfvars` to match your requirements.
+
+## Running
+
+Initialise the provider:
+
+```bash
+$ terraform init
+Initializing modules...
+- cluster in cluster
+- nodepool in nodepool
+
+Initializing the backend...
+
+Initializing provider plugins...
+
+Terraform has been successfully initialized!
+```
+
+You're now ready!
