@@ -1,0 +1,10 @@
+api_uri = "https://api.mycluster.com"
+organisation = "giantswarm"
+release_ver = "11.0.1"
+cluster_name = "Terraformed cluster"
+master_zone = "eu-central-1a"
+nodepool_name = "My little nodepool"
+az_count = 1
+min_workers = 1
+max_workers = 2
+auth_token = "my-auth-token"
