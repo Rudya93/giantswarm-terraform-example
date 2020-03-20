@@ -62,3 +62,7 @@ Terraform has been successfully initialized!
 ```
 
 You're now ready!
+
+## Notes
+
+The example will wait until the Giant Swarm API sets the cluster status to `created`. This allows further resources to be applied which depend on the new cluster being accessible.
