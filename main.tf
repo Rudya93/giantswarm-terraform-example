@@ -1,5 +1,5 @@
 module "cluster" {
-  source  = "./cluster"
+  source       = "./cluster"
 
   api_uri      = var.api_uri
   auth_token   = var.auth_token
@@ -10,7 +10,7 @@ module "cluster" {
 }
 
 module "nodepool" {
-  source    = "./nodepool"
+  source        = "./nodepool"
 
   api_uri       = var.api_uri
   auth_token    = var.auth_token
@@ -20,6 +20,16 @@ module "nodepool" {
   max_workers   = var.max_workers
 
   clusterid     = module.cluster.clusterid
+}
+
+module "wait-for-cluster" {
+  source     = "./wait-for-cluster"
+
+  api_uri    = var.api_uri
+  auth_token = var.auth_token
+
+  clusterid  = module.cluster.clusterid
+  nodepoolid = module.nodepool.nodepoolid
 }
 
 output "clusterid" {
