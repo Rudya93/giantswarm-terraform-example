@@ -1,4 +1,5 @@
 resource "null_resource" "cluster_status" {
+  # introduce the dependency on the nodepool module
   depends_on       = [var.nodepoolid]
 
   provisioner "local-exec" {
