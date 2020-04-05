@@ -14,6 +14,20 @@ chmod +x terraform-provider-restapi_v${RESTAPI_VERSION}-linux-amd64
 mv terraform-provider-restapi_v${RESTAPI_VERSION}-linux-amd64 ~/.terraform.d/plugins/terraform-provider-restapi_v${RESTAPI_VERSION}
 ```
 
+### Shell script provider
+
+Get the [shell_script](https://github.com/scottwinkler/terraform-provider-shell) provider:
+
+```bash
+SHELL_PROVIDER_VERSION="1.2.0"
+wget https://github.com/scottwinkler/terraform-provider-shell/releases/download/v${SHELL_PROVIDER_VERSION}/terraform-provider-shell_v${SHELL_PROVIDER_VERSION}_linux_amd64.tar.gz
+tar -zxvf terraform-provider-shell_v${SHELL_PROVIDER_VERSION}_linux_amd64.tar.gz
+chmod -x terraform-provider-shell
+mv terraform-provider-shell ~/.terraform.d/plugins/terraform-provider-shell_v${SHELL_PROVIDER_VERSION}
+```
+
+Note: only required if you wish to use the `tenant-cluster-auth` module.
+
 ### Authentication
 
 Create a file containing your Giant Swarm user credentials:
@@ -65,4 +79,4 @@ You're now ready!
 
 ## Notes
 
-The example will wait until the Giant Swarm API has registered nodepool nodes as ready. This allows further resources to be applied which depend on the new cluster being accessible.
+The example will wait until the Giant Swarm API has registered nodepool nodes as ready. This allows further resources to be applied which depend on the new cluster being accessible - these can be created against the tenant cluster Kubernetes API using the generated credentials in `tenant-cluster-auth`.
