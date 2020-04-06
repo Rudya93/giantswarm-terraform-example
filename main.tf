@@ -42,8 +42,8 @@ module "wait-for-cluster" {
   nodepoolid = module.nodepool.nodepoolid
 }
 
-module "tenant-cluster-auth" {
-  source          = "./tenant-cluster-auth"
+module "tenant-cluster-access" {
+  source          = "./tenant-cluster-access"
 
   api_uri         = var.api_uri
   auth_token      = var.auth_token
@@ -67,5 +67,5 @@ output "nodepoolid" {
 }
 
 output "k8s_api_uri" {
-  value = module.tenant-cluster-auth.k8s_api_uri
+  value = module.tenant-cluster-access.k8s_api_uri
 }
