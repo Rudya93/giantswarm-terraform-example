@@ -10,15 +10,13 @@ provider "shell" {}
 resource "shell_script" "k8s_key_pair" {
   environment = {
     DATA = <<-EOT
-{
-  "description": "${var.key_description}",
-  "ttl_hours": ${var.key_ttl},
-  "certificate_organizations": "${var.key_orgs}"
-}
-EOT
-}
-
-  depends_on = [var.clusterid]
+    {
+      "description": "${var.key_description}",
+      "ttl_hours": ${var.key_ttl},
+      "certificate_organizations": "${var.key_orgs}"
+    }
+    EOT
+  }
 
   lifecycle_commands {
     create   = <<SCRIPT
