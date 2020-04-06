@@ -1,5 +1,12 @@
 provider "shell" {}
 
+# Terraform expects all resources to have delete methods, but
+# there is no way to delete a tenant cluster key pair. To work
+# around this we have to craft a manual curl in order to create
+# and retrieve the key pair. On deletion the resource will
+# always be deleted but nothing will actually happen - this
+# still satisfies Terraform.
+
 resource "shell_script" "k8s_key_pair" {
   environment = {
     DATA = <<-EOT

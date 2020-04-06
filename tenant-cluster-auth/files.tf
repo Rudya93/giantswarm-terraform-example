@@ -1,3 +1,6 @@
+# kubeconfig and associated key pair files are output
+# to this module's directory.
+
 resource "local_file" "key_ca_cert" {
   content         = shell_script.k8s_key_pair.output["certificate_authority_data"]
   filename        = "${path.module}/ca.crt"
