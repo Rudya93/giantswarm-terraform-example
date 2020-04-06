@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [0.3.1]
 
-### Added
+### Changed
 
 - Explicit dependencies to ensure kubeconfig and credentials are created after the cluster is ready.
 
