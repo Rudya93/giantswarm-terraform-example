@@ -29,3 +29,11 @@ variable "key_orgs" {
   type        = string
   description = "Comma separated list of organisations the key will belong to."
 }
+
+# dummy variable used to introduce inter-module dependency
+
+variable "api_depends_on" {
+  type        = any
+  default     = null
+  description = "Dummy variable."
+}

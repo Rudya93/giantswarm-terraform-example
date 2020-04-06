@@ -11,3 +11,9 @@ resource "null_resource" "cluster_status" {
     # command = "until [ `curl -sH \"Authorization: giantswarm ${var.auth_token}\" ${var.api_uri}/v5/clusters/${var.clusterid}/nodepools/${var.nodepoolid}/ | jq .status.nodes_ready` -gt 0 ; do sleep 30 ; done"
   }
 }
+
+output "pause" {
+  value      = {}
+
+  depends_on = [null_resource.cluster_status]
+}

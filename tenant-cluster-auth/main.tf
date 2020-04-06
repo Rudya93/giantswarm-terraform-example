@@ -8,6 +8,9 @@ provider "shell" {}
 # still satisfies Terraform.
 
 resource "shell_script" "k8s_key_pair" {
+  # wait until the tenant cluster is ready.
+  depends_on  = [var.api_depends_on]
+
   environment = {
     DATA = <<-EOT
     {

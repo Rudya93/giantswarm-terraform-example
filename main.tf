@@ -49,6 +49,8 @@ module "tenant-cluster-auth" {
   key_description = var.key_description
   key_ttl         = var.key_ttl
   key_orgs        = var.key_orgs
+
+  api_depends_on  = [module.wait-for-cluster.pause]
 }
 
 output "clusterid" {
