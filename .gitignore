@@ -1,1 +1,8 @@
 .terraform
+terraform.tfvars
+terraform.tfstate
+terraform.tfstate.*
+tenant-cluster-auth/ca.crt
+tenant-cluster-auth/client.crt
+tenant-cluster-auth/client.key
+tenant-cluster-auth/kubeconfig

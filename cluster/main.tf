@@ -8,6 +8,7 @@ provider "restapi" {
 }
 
 resource "restapi_object" "cluster" {
+  # explicitly declare the API endpoint path for each operation
   path         = "/v5/clusters/"
   create_path  = "/v5/clusters/"
   read_path    = "/v5/clusters/{id}/"

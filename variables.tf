@@ -1,3 +1,4 @@
+# giant swarm API access
 variable "api_uri" {
   type        = string
   description = "URI of installation API."
@@ -8,6 +9,7 @@ variable "auth_token" {
   description = "Authentication token."
 }
 
+# tenant cluster configuration
 variable "organisation" {
   type        = string
   description = "Cluster owner."
@@ -46,4 +48,20 @@ variable "min_workers" {
 variable "max_workers" {
   type        = number
   description = "Maximum number of worker nodes."
+}
+
+# tenant cluster authentication
+variable "key_description" {
+  type        = string
+  description = "String describing key's use."
+}
+
+variable "key_ttl" {
+  type        = number
+  description = "Key's TTL in hours."
+}
+
+variable "key_orgs" {
+  type        = string
+  description = "Comma separated list of organisations the key will belong to."
 }
