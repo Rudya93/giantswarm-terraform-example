@@ -50,6 +50,7 @@ module "tenant-cluster-auth" {
   key_ttl         = var.key_ttl
   key_orgs        = var.key_orgs
 
+  # wait for cluster readiness
   api_depends_on  = [module.wait-for-cluster.pause]
 }
 

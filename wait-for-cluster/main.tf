@@ -13,7 +13,7 @@ resource "null_resource" "cluster_status" {
 }
 
 output "pause" {
+  # empty output to use for dependency.
   value      = {}
-
   depends_on = [null_resource.cluster_status]
 }
