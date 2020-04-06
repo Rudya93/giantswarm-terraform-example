@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 - Use nodepool node count to indicate cluster readiness.
+- Require the use of the `shell_script` provider.
 
 ## [0.2.0]
 
