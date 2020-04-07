@@ -50,6 +50,13 @@ variable "max_workers" {
   description = "Maximum number of worker nodes."
 }
 
+# meta-variable to create a self-contained kubeconfig
+variable "kubeconfig_embed" {
+  type        = bool
+  description = "Embeds client certs in kubeconfig if `true`. Set to `false` to write certs to disk."
+  default     = true
+}
+
 # tenant cluster authentication
 variable "key_description" {
   type        = string
