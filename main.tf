@@ -1,3 +1,7 @@
+terraform {
+  required_version = ">= 0.12.0"
+}
+
 module "cluster" {
   source       = "./cluster"
 
@@ -38,20 +42,21 @@ module "wait-for-cluster" {
   nodepoolid = module.nodepool.nodepoolid
 }
 
-module "tenant-cluster-auth" {
-  source          = "./tenant-cluster-auth"
+module "tenant-cluster-access" {
+  source           = "./tenant-cluster-access"
 
-  api_uri         = var.api_uri
-  auth_token      = var.auth_token
+  api_uri          = var.api_uri
+  auth_token       = var.auth_token
 
-  clusterid       = module.cluster.clusterid
+  clusterid        = module.cluster.clusterid
 
-  key_description = var.key_description
-  key_ttl         = var.key_ttl
-  key_orgs        = var.key_orgs
+  key_description  = var.key_description
+  key_ttl          = var.key_ttl
+  key_orgs         = var.key_orgs
+  kubeconfig_embed = var.kubeconfig_embed
 
   # wait for cluster readiness
-  api_depends_on  = [module.wait-for-cluster.pause]
+  api_depends_on   = [module.wait-for-cluster.pause]
 }
 
 output "clusterid" {
@@ -63,5 +68,5 @@ output "nodepoolid" {
 }
 
 output "k8s_api_uri" {
-  value = module.tenant-cluster-auth.k8s_api_uri
+  value = module.tenant-cluster-access.k8s_api_uri
 }

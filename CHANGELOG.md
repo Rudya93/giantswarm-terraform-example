@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.4.0]
+
+### Added
+
+- Require Terraform version 0.12.0 or greater.
+- Optionally create a self-contained `kubeconfig` with inline certs.
+
+### Changed
+
+- Change name of tenant cluster credentials module to better reflect purpose.
+
 ## [0.3.1]
 
 ### Changed

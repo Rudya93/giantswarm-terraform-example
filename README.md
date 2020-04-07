@@ -26,7 +26,7 @@ chmod -x terraform-provider-shell
 mv terraform-provider-shell ~/.terraform.d/plugins/terraform-provider-shell_v${SHELL_PROVIDER_VERSION}
 ```
 
-Note: only required if you wish to use the `tenant-cluster-auth` module.
+Note: only required if you wish to use the `tenant-cluster-access` module.
 
 ### Authentication
 
@@ -67,7 +67,7 @@ $ terraform init
 Initializing modules...
 - cluster in cluster
 - nodepool in nodepool
-- tenant-cluster-auth in tenant-cluster-auth
+- tenant-cluster-access in tenant-cluster-access
 - wait-for-cluster in wait-for-cluster
 
 Initializing the backend...
@@ -90,4 +90,4 @@ You're now ready!
 
 ## Notes
 
-The example will wait until the Giant Swarm API has registered nodepool nodes as ready. This allows further resources to be applied which depend on the new cluster being accessible - these can be created against the tenant cluster Kubernetes API using the generated credentials in `tenant-cluster-auth`.
+The example will wait until the Giant Swarm API has registered nodepool nodes as ready. This allows further resources to be applied which depend on the new cluster being accessible - these can be created against the tenant cluster Kubernetes API using the generated credentials in `tenant-cluster-access`.
