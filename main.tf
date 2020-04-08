@@ -53,7 +53,6 @@ module "tenant-cluster-access" {
   key_description  = var.key_description
   key_ttl          = var.key_ttl
   key_orgs         = var.key_orgs
-  kubeconfig_embed = var.kubeconfig_embed
 
   # wait for cluster readiness
   api_depends_on   = [module.wait-for-cluster.pause]
@@ -69,4 +68,8 @@ output "nodepoolid" {
 
 output "k8s_api_uri" {
   value = module.tenant-cluster-access.k8s_api_uri
+}
+
+output "kubeconfig" {
+  value = module.tenant-cluster-access.kubeconfig
 }

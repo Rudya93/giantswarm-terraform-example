@@ -8,7 +8,6 @@ az_count = 1
 min_workers = 1
 max_workers = 2
 auth_token = "my-auth-token"
-kubeconfig_embed = true
 key_description = "my test key"
 key_ttl = 12
 key_orgs = "system:masters"

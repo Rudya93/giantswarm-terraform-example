@@ -17,3 +17,7 @@ output "key_client_key" {
 output "key_client_cert" {
   value = shell_script.k8s_key_pair.output["client_certificate_data"]
 }
+
+output "kubeconfig" {
+  value = local_file.kubeconfig_embed.content
+}

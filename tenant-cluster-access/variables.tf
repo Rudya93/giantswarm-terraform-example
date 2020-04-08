@@ -13,12 +13,6 @@ variable "clusterid" {
   description = "ID of cluster."
 }
 
-# meta-variable to create a self-contained kubeconfig
-variable "kubeconfig_embed" {
-  type        = bool
-  description = "Embeds client certs in kubeconfig if `true`. Set to `false` to write certs to disk."
-}
-
 # kubernetes API auth credentials
 
 variable "key_description" {
